@@ -471,152 +471,26 @@
         </div>
     </section>
 
-    <!-- Radial Scroll Gallery Section (GSAP) -->
-    <section id="radial-gallery-section" class="py-16 px-4 relative z-10 overflow-hidden bg-gray-950/70 border-y border-gray-800/80">
+    <!-- Radial Work Gallery Section (Main Projects Section) -->
+    <section id="projects" class="py-20 px-4 relative z-10 overflow-hidden bg-gray-950/70 border-y border-gray-800/80">
         <div class="max-w-6xl mx-auto text-center mb-8">
-            <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Interactive Showcase</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">
-                Radial Work <span class="gradient-text">Gallery</span>
+            <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Featured Portfolio</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-1">
+                Featured <span class="gradient-text">Projects</span>
             </h2>
-            <p class="text-gray-400 text-sm mt-2">Scroll down to rotate through interactive work cards</p>
-            <div class="animate-bounce text-indigo-400 text-xs mt-4 flex items-center justify-center space-x-1">
+            <p class="text-gray-400 text-sm sm:text-base mt-2 max-w-xl mx-auto">Scroll down to rotate through interactive work cards</p>
+            <div class="animate-bounce text-indigo-400 text-xs mt-4 flex items-center justify-center space-x-1 font-mono">
                 <i class="fa-solid fa-arrow-down text-xs"></i>
                 <span>Scroll to Rotate Wheel</span>
             </div>
         </div>
 
-        <div id="radial-pin-wrapper" class="min-h-[600px] w-full relative flex items-center justify-center overflow-hidden">
-            <div id="radial-mask-box" class="relative w-full overflow-hidden h-[550px]" style="mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);">
+        <div id="radial-pin-wrapper" class="min-h-[700px] w-full relative flex items-center justify-center overflow-hidden">
+            <div id="radial-mask-box" class="relative w-full overflow-hidden h-[650px]" style="mask-image: linear-gradient(to top, transparent 0%, black 35%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%, black 100%);">
                 <ul id="radial-wheel" class="absolute left-1/2 -translate-x-1/2 will-change-transform m-0 p-0 list-none transition-opacity duration-500 ease-out">
                     <!-- Dynamic rotating project items populated via GSAP JS -->
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gray-900/40">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-                    Featured <span class="gradient-text">Projects</span>
-                </h2>
-                <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-                    Practical software applications built to solve real-world problems.
-                </p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex justify-center space-x-2 sm:space-x-4 mb-12">
-                <button onclick="filterProjects('all')" id="btn-all" class="filter-btn active px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-indigo-600 text-white transition-all">All Projects</button>
-                <button onclick="filterProjects('web')" id="btn-web" class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all">Web Systems</button>
-                <button onclick="filterProjects('automation')" id="btn-automation" class="filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all">Automation & Scraping</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: Cafe Order Management -->
-                <div class="project-card web glass-panel rounded-2xl overflow-hidden border border-gray-800 card-hover flex flex-col">
-                    <div class="h-52 overflow-hidden relative group">
-                        <img src="assets/images/cafe-dashboard.png" alt="Cafe Order Management System UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-3 right-3 px-3 py-1 bg-indigo-600/80 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-indigo-400/30">UniKL Project</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white">Cafe Order Management</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                A web-based order processing system engineered for student-run cafes at UniKL. Streamlines menu orders, table requests, and kitchen workflows.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 bg-indigo-900/40 text-indigo-300 rounded-md text-xs font-mono border border-indigo-500/20">ASP.NET</span>
-                                <span class="px-2.5 py-1 bg-blue-900/40 text-blue-300 rounded-md text-xs font-mono border border-blue-500/20">C#</span>
-                                <span class="px-2.5 py-1 bg-purple-900/40 text-purple-300 rounded-md text-xs font-mono border border-purple-500/20">SQL Server</span>
-                            </div>
-                        </div>
-                        <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
-                            <button onclick="openModal('cafe')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center space-x-1">
-                                <span>View Case Study</span>
-                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                            </button>
-                            <a href="https://github.com/InvictusPRIMAL" target="_blank" class="text-gray-400 hover:text-white text-lg">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Shopee Price Monitor -->
-                <div class="project-card automation glass-panel rounded-2xl overflow-hidden border border-gray-800 card-hover flex flex-col">
-                    <div class="h-52 overflow-hidden relative group">
-                        <img src="assets/images/shopee-scraper.png" alt="Shopee Price Monitor System UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-3 right-3 px-3 py-1 bg-purple-600/80 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-purple-400/30">Automation</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white">Shopee Price Monitor</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                A Java-based Web Scraper leveraging Jsoup to extract real-time product pricing, monitor discount shifts, and notify users of price drops.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 bg-amber-900/40 text-amber-300 rounded-md text-xs font-mono border border-amber-500/20">Java</span>
-                                <span class="px-2.5 py-1 bg-emerald-900/40 text-emerald-300 rounded-md text-xs font-mono border border-emerald-500/20">Jsoup</span>
-                                <span class="px-2.5 py-1 bg-pink-900/40 text-pink-300 rounded-md text-xs font-mono border border-pink-500/20">Web Automation</span>
-                            </div>
-                        </div>
-                        <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
-                            <button onclick="openModal('scraper')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center space-x-1">
-                                <span>View Case Study</span>
-                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                            </button>
-                            <a href="https://github.com/InvictusPRIMAL" target="_blank" class="text-gray-400 hover:text-white text-lg">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Student & IT Portal Management -->
-                <div class="project-card web glass-panel rounded-2xl overflow-hidden border border-gray-800 card-hover flex flex-col">
-                    <div class="h-52 overflow-hidden relative group">
-                        <img src="assets/images/unikl-portal.png" alt="UniKL Student Portal System UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
-                        <span class="absolute top-3 right-3 px-3 py-1 bg-pink-600/80 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-pink-400/30">Web System</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-white">Student Academic Portal</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                Modular academic management platform built for tracking course modules, submission logs, and student performance metrics.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 bg-indigo-900/40 text-indigo-300 rounded-md text-xs font-mono border border-indigo-500/20">ASP.NET</span>
-                                <span class="px-2.5 py-1 bg-cyan-900/40 text-cyan-300 rounded-md text-xs font-mono border border-cyan-500/20">Tailwind CSS</span>
-                                <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md text-xs font-mono border border-gray-700">REST API</span>
-                            </div>
-                        </div>
-                        <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
-                            <button onclick="openModal('portal')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center space-x-1">
-                                <span>View Case Study</span>
-                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                            </button>
-                            <a href="https://github.com/InvictusPRIMAL" target="_blank" class="text-gray-400 hover:text-white text-lg">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
@@ -958,7 +832,7 @@
 
                 const wheel = document.getElementById('radial-wheel');
                 if (wheel) {
-                    const radius = window.innerWidth < 768 ? 240 : 400;
+                    const radius = window.innerWidth < 768 ? 270 : 460;
                     const diameter = radius * 2;
                     wheel.style.width = diameter + 'px';
                     wheel.style.height = diameter + 'px';
@@ -977,21 +851,21 @@
                         li.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) rotate(${rotationAngle + 90}deg)`;
 
                         li.innerHTML = `
-                            <div onclick="openModal('${project.key}')" class="radial-card group relative w-[180px] h-[250px] sm:w-[220px] sm:h-[300px] overflow-hidden rounded-xl bg-gray-900 border border-gray-800 shadow-xl cursor-pointer transition-all duration-500 hover:scale-125 hover:-translate-y-6 z-10 hover:z-50">
+                            <div onclick="openModal('${project.key}')" class="radial-card group relative w-[220px] h-[300px] sm:w-[260px] sm:h-[360px] overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 shadow-2xl cursor-pointer transition-all duration-500 hover:scale-125 hover:-translate-y-8 z-10 hover:z-50">
                                 <div class="absolute inset-0 overflow-hidden">
                                     <img src="${project.img}" alt="${project.title}" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-80"></div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-85"></div>
                                 </div>
-                                <div class="absolute inset-0 flex flex-col justify-between p-4">
+                                <div class="absolute inset-0 flex flex-col justify-between p-5">
                                     <div class="flex justify-between items-start">
-                                        <span class="px-2 py-0.5 bg-gray-900/80 backdrop-blur text-[10px] font-semibold text-indigo-300 rounded-full border border-indigo-500/30">${project.cat}</span>
-                                        <div class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        <span class="px-2.5 py-1 bg-gray-900/80 backdrop-blur text-xs font-semibold text-indigo-300 rounded-full border border-indigo-500/30">${project.cat}</span>
+                                        <div class="w-7 h-7 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="text-base sm:text-lg font-bold text-white leading-tight mb-1">${project.title}</h3>
-                                        <div class="h-0.5 bg-indigo-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                                        <h3 class="text-lg sm:text-xl font-bold text-white leading-tight mb-1.5">${project.title}</h3>
+                                        <div class="h-1 bg-indigo-500 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
