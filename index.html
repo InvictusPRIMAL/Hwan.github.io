@@ -314,54 +314,102 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Me Section (Bento Grid Inspired by Jia Huo & Devansh) -->
     <section id="about" class="py-24 scroll-mt-20 px-4 sm:px-6 lg:px-8 relative z-10 bg-gray-900/40">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+                <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Background & Principles</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-1 mb-3">
                     About <span class="gradient-text">Me</span>
                 </h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="gradient-border p-8 sm:p-10 mb-12 glass-panel">
-                <div class="text-gray-300 text-base sm:text-lg leading-relaxed space-y-6">
-                    <p>
-                        I am a dedicated <strong class="text-indigo-400 font-semibold">Information Technology student at Universiti Kuala Lumpur (UniKL)</strong>, driven by a clear dual goal: achieving academic excellence while building a sustainable, impactful career in technology. I strongly believe in gaining deep foundational understanding over rote memorization, enabling me to design and implement systems that are both robust and scalable.
-                    </p>
-                    <p>
-                        My technical core is centered on <strong class="text-purple-400 font-semibold">Back-End Development and Data Automation</strong>. I have hands-on experience designing full-featured web management systems using <strong class="text-white">ASP.NET</strong> and <strong class="text-white">C#</strong>, as well as building custom automated web scrapers with <strong class="text-white">Java & Jsoup</strong> to harvest and monitor web data effectively.
-                    </p>
-                    <p>
-                        Beyond software engineering, I prioritize a balanced, holistic lifestyle—maintaining physical discipline, mental resilience, and personal values. I am always excited to connect with developers, industry mentors, and innovative organizations working on impactful projects.
-                    </p>
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Main Bio Card (Span 2) -->
+                <div class="md:col-span-2 gradient-border p-8 sm:p-10 glass-panel flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">UniKL IT Student & Developer</h3>
+                                <p class="text-xs text-indigo-300 font-mono">Specializing in Back-End & Data Automation</p>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-300 text-sm sm:text-base leading-relaxed space-y-4 font-light">
+                            <p>
+                                I am an <strong class="text-indigo-400 font-semibold">Information Technology student at Universiti Kuala Lumpur (UniKL)</strong>, driven by a dual objective: achieving academic excellence while engineering scalable, real-world back-end systems.
+                            </p>
+                            <p>
+                                My engineering core is built around <strong class="text-purple-400 font-semibold">ASP.NET, C#, Java, and SQL</strong>. I design full-stack management applications and build custom automated web scrapers leveraging <strong class="text-white font-semibold">Jsoup</strong> to harvest dynamic web data efficiently.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-950/60 text-indigo-300 rounded-lg text-xs font-mono border border-indigo-500/20">ASP.NET Core</span>
+                        <span class="px-3 py-1 bg-purple-950/60 text-purple-300 rounded-lg text-xs font-mono border border-purple-500/20">Java & Jsoup</span>
+                        <span class="px-3 py-1 bg-pink-950/60 text-pink-300 rounded-lg text-xs font-mono border border-pink-500/20">SQL Server</span>
+                        <span class="px-3 py-1 bg-emerald-950/60 text-emerald-300 rounded-lg text-xs font-mono border border-emerald-500/20">REST APIs</span>
+                    </div>
                 </div>
+
+                <!-- Stats Highlights Card (Span 1) -->
+                <div class="glass-panel p-8 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-6">
+                    <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-line text-purple-400"></i>
+                        <span>Key Metrics</span>
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                            <div class="text-3xl font-extrabold gradient-text font-mono">3+</div>
+                            <div class="text-xs text-gray-400 mt-1">Core Back-End Web Systems</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                            <div class="text-3xl font-extrabold text-indigo-400 font-mono">100%</div>
+                            <div class="text-xs text-gray-400 mt-1">Automated Java Web Scraping</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                            <div class="text-3xl font-extrabold text-emerald-400 font-mono">UniKL</div>
+                            <div class="text-xs text-gray-400 mt-1">IT Student Specialization</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Key Values Highlights -->
+            <!-- Key Values Highlights (3 Cards) -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center hover:border-indigo-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-indigo-600/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl mx-auto mb-4 border border-indigo-500/20">
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 card-hover">
+                    <div class="w-12 h-12 bg-indigo-600/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-500/20">
                         <i class="fa-solid fa-code"></i>
                     </div>
                     <h3 class="font-bold text-white mb-1">Clean Architecture</h3>
-                    <p class="text-xs text-gray-400">Writing clean, maintainable code with focus on structure and efficiency.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Writing structured, maintainable C# & Java code focused on reliability and object-oriented principles.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center hover:border-purple-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-purple-600/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mx-auto mb-4 border border-purple-500/20">
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 card-hover">
+                    <div class="w-12 h-12 bg-purple-600/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-purple-500/20">
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <h3 class="font-bold text-white mb-1">Data Automation</h3>
-                    <p class="text-xs text-gray-400">Automating price tracking & scraping workflows with Java tools.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Automating e-commerce price tracking & scraping workflows with Java Jsoup tools.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center hover:border-pink-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-pink-600/10 text-pink-400 rounded-xl flex items-center justify-center text-xl mx-auto mb-4 border border-pink-500/20">
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 card-hover">
+                    <div class="w-12 h-12 bg-pink-600/10 text-pink-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-pink-500/20">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <h3 class="font-bold text-white mb-1">Continuous Growth</h3>
-                    <p class="text-xs text-gray-400">Active UniKL IT student committed to constant technical learning.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Active UniKL IT student committed to constant technical learning and system design mastery.</p>
                 </div>
             </div>
 
