@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Danisy Hazwan - Prototype 5: Ultra-Modern Apple Glass</title>
+    <meta name="description" content="Portfolio of Muhammad Danisy Hazwan, IT Student at UniKL specializing in Back-End Development, ASP.NET, Java, C#, SQL, and Data Automation.">
+    <meta name="author" content="Muhammad Danisy Hazwan">
+    
+    <!-- Tailwind CSS CDN & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #02040a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .apple-gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .apple-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .apple-glass:hover {
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .aura-spot {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #02040a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white relative">
+
+    <!-- Prototype Switcher Banner -->
+    <div class="bg-blue-950/90 border-b border-blue-500/30 py-2 px-4 text-center text-xs font-mono text-blue-200 fixed top-0 w-full z-50 flex justify-between items-center max-w-full backdrop-blur-md">
+        <span class="hidden sm:inline font-bold">PROTOTYPE 5 OF 5: Ultra-Modern Apple Glass</span>
+        <div class="flex items-center space-x-1.5 mx-auto sm:mx-0 flex-wrap">
+            <span class="text-gray-400">Switch:</span>
+            <a href="index.html" class="px-2 py-0.5 bg-gray-800 text-gray-300 rounded">1: Neo-Bento</a>
+            <a href="prototype-2.html" class="px-2 py-0.5 bg-gray-800 text-gray-300 rounded">2: Editorial</a>
+            <a href="prototype-3.html" class="px-2 py-0.5 bg-gray-800 text-gray-300 rounded">3: Glass</a>
+            <a href="prototype-4.html" class="px-2 py-0.5 bg-gray-800 text-gray-300 rounded">4: Terminal</a>
+            <a href="prototype-5.html" class="px-2 py-0.5 bg-blue-600 text-white font-bold rounded">5: 3D Apple</a>
+        </div>
+    </div>
+
+    <!-- Ambient Aura Spots -->
+    <div class="aura-spot w-[700px] h-[700px] bg-blue-600 top-0 -left-40"></div>
+    <div class="aura-spot w-[650px] h-[650px] bg-purple-600 top-1/2 -right-40"></div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-9 w-full apple-glass z-40 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 via-purple-600 to-pink-500 flex items-center justify-center text-white font-bold font-mono text-xs shadow-lg shadow-blue-500/20">
+                    DH
+                </div>
+                <span class="text-base font-bold text-white tracking-tight">Danisy Hazwan</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+                <a href="#home" class="hover:text-blue-400 transition-colors">Overview</a>
+                <a href="#tech" class="hover:text-blue-400 transition-colors">Tech Capabilities</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Radial Gallery</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <a href="mailto:danisy0175@gmail.com" class="px-4 py-2 text-xs font-semibold bg-white text-black hover:bg-slate-200 rounded-full transition-all shadow-lg">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[88vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full apple-glass text-blue-300 text-xs font-medium mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                <span>IT Student @ UniKL &bull; Back-End Developer</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-white mb-6 leading-none">
+                Engineering <span class="apple-gradient-text">Back-End Systems</span>
+            </h1>
+
+            <p class="text-lg sm:text-2xl text-slate-300 font-light mb-10 max-w-3xl mx-auto leading-relaxed">
+                Specializing in ASP.NET Core, Java web scrapers, database normalization, and REST APIs at Universiti Kuala Lumpur.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full shadow-xl shadow-blue-600/30 transition-all text-sm">
+                    Explore Radial Work Gallery
+                </a>
+                <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-8 py-4 apple-glass text-slate-200 font-semibold rounded-full hover:bg-white/10 transition-all text-sm">
+                    GitHub Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Pill Tabs Section -->
+    <section id="tech" class="py-20 px-4 max-w-5xl mx-auto relative z-10">
+        <div class="apple-glass p-8 sm:p-12 rounded-3xl">
+            <div class="text-center mb-8">
+                <span class="text-xs font-mono font-semibold text-blue-400 uppercase">TECHNOLOGY STACK</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">Back-End Core Capabilities</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">ASP.NET &amp; C#</h3>
+                    <p class="text-xs text-slate-400">POS Order Systems &amp; Web Controllers</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fa-solid fa-spider"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">Java &amp; Jsoup</h3>
+                    <p class="text-xs text-slate-400">Automated E-Commerce Price Monitoring</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <div class="w-12 h-12 rounded-full bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">SQL Server</h3>
+                    <p class="text-xs text-slate-400">Relational Database Schemas &amp; Queries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radial Work Gallery (Original GSAP Preserved) -->
+    <section id="projects" class="py-24 px-4 relative z-10 overflow-hidden bg-slate-950/80 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto text-center mb-6">
+            <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">INTERACTIVE SHOWCASE</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-1">
+                Radial Work Gallery
+            </h2>
+            <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Scroll down to rotate through interactive work cards</p>
+        </div>
+
+        <div id="radial-pin-wrapper" class="min-h-[620px] w-full relative flex items-center justify-center overflow-hidden pt-4">
+            <div id="radial-mask-box" class="relative w-full overflow-hidden h-[560px]" style="mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);">
+                <ul id="radial-wheel" class="absolute left-1/2 -translate-x-1/2 will-change-transform m-0 p-0 list-none transition-opacity duration-500 ease-out">
+                    <!-- Dynamic rotating project items populated via GSAP JS -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 text-center text-xs text-slate-500">
+        <p>© 2026 Muhammad Danisy Hazwan. Prototype 5: Ultra-Modern Apple Glass.</p>
+    </footer>
+
+    <!-- GSAP Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const galleryProjects = [
+                    { id: 1, title: "Cafe POS System", cat: "ASP.NET", img: "assets/images/cafe-dashboard.png" },
+                    { id: 2, title: "Shopee Price Scraper", cat: "Java Automation", img: "assets/images/shopee-scraper.png" },
+                    { id: 3, title: "Student Academic Portal", cat: "Web System", img: "assets/images/unikl-portal.png" },
+                    { id: 4, title: "Nebula UI Concept", cat: "Art", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" },
+                    { id: 5, title: "Oceanic Analytics", cat: "Nature", img: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&w=400&q=80" }
+                ];
+
+                const wheel = document.getElementById('radial-wheel');
+                if (wheel) {
+                    const radius = window.innerWidth < 768 ? 230 : 390;
+                    const diameter = radius * 2;
+                    wheel.style.width = diameter + 'px';
+                    wheel.style.height = diameter + 'px';
+                    wheel.style.bottom = (-radius - 35) + 'px';
+
+                    const totalItems = galleryProjects.length;
+                    galleryProjects.forEach((project, index) => {
+                        const li = document.createElement('li');
+                        li.className = 'absolute top-1/2 left-1/2';
+                        
+                        const angle = (index / totalItems) * 2 * Math.PI;
+                        const x = radius * Math.cos(angle);
+                        const y = radius * Math.sin(angle);
+                        const rotationAngle = (angle * 180) / Math.PI;
+
+                        li.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) rotate(${rotationAngle + 90}deg)`;
+
+                        li.innerHTML = `
+                            <div class="radial-card group relative w-[180px] h-[245px] sm:w-[215px] sm:h-[295px] overflow-hidden rounded-2xl bg-slate-900 border border-white/10 shadow-2xl cursor-pointer transition-all duration-500 hover:scale-125 hover:-translate-y-6 z-10 hover:z-50">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <img src="${project.img}" alt="${project.title}" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-85"></div>
+                                </div>
+                                <div class="absolute inset-0 flex flex-col justify-between p-4">
+                                    <div class="flex justify-between items-start">
+                                        <span class="px-2.5 py-1 bg-black/80 backdrop-blur text-[11px] font-semibold text-blue-300 rounded-full border border-blue-500/30">${project.cat}</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-sm sm:text-base font-bold text-white leading-tight mb-1">${project.title}</h3>
+                                        <div class="h-0.5 bg-blue-500 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        wheel.appendChild(li);
+                    });
+
+                    gsap.to('#radial-wheel', {
+                        rotation: 360,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '#radial-pin-wrapper',
+                            pin: true,
+                            start: 'center center',
+                            end: '+=2000',
+                            scrub: 1,
+                            invalidateOnRefresh: true
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
