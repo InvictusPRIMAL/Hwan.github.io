@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Danisy Hazwan - Interactive 5-in-1 Portfolio Showcase</title>
+    <title>Muhammad Danisy Hazwan - Interactive 8-in-1 Portfolio Showcase</title>
     <meta name="description" content="Portfolio of Muhammad Danisy Hazwan, IT Student at UniKL specializing in Back-End Development, ASP.NET, Java, C#, SQL, and Data Automation.">
     <meta name="author" content="Muhammad Danisy Hazwan">
     
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,7 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                         grotesk: ['"Space Grotesk"', 'sans-serif'],
+                        orbitron: ['"Orbitron"', 'sans-serif'],
                     }
                 }
             }
@@ -48,6 +49,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .synthwave-text {
+            background: linear-gradient(135deg, #ff007f 0%, #00f0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
         }
 
         .cyber-border {
@@ -85,6 +94,16 @@
             opacity: 1;
         }
 
+        /* Retrowave Sun */
+        .retrowave-sun {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #ff007f, #ffaa00);
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.6);
+            margin: 0 auto;
+        }
+
         /* Scrollbar styling */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #060913; }
@@ -105,19 +124,22 @@
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white relative">
 
-    <!-- Persistent Dynamic 5-in-1 Prototype Switcher Bar -->
+    <!-- Persistent Dynamic 8-in-1 Prototype Switcher Bar -->
     <div class="bg-slate-950/95 border-b border-indigo-500/40 h-11 px-3 sm:px-6 text-xs font-mono fixed top-0 left-0 right-0 z-50 backdrop-blur-md flex justify-between items-center max-w-full shadow-2xl">
         <div class="flex items-center space-x-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="font-bold text-indigo-300 text-[11px] sm:text-xs truncate max-w-[200px] sm:max-w-none" id="current-proto-title">PROTOTYPE 1: Cyber-Glass Neo-Bento</span>
+            <span class="font-bold text-indigo-300 text-[11px] sm:text-xs truncate max-w-[170px] sm:max-w-none" id="current-proto-title">PROTOTYPE 1: Cyber-Glass Neo-Bento</span>
         </div>
-        <div class="flex items-center space-x-1 sm:space-x-1.5 font-mono">
-            <span class="text-gray-400 text-[10px] hidden lg:inline mr-1">Switch Design:</span>
-            <button onclick="switchProto(1)" id="pbtn-1" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-indigo-600 text-white font-bold rounded shadow text-[10px] sm:text-xs transition-all">1: Bento</button>
-            <button onclick="switchProto(2)" id="pbtn-2" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">2: Editorial</button>
-            <button onclick="switchProto(3)" id="pbtn-3" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">3: Glass</button>
-            <button onclick="switchProto(4)" id="pbtn-4" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">4: CLI</button>
-            <button onclick="switchProto(5)" id="pbtn-5" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">5: Apple</button>
+        <div class="flex items-center space-x-1 sm:space-x-1 font-mono flex-wrap">
+            <span class="text-gray-400 text-[10px] hidden xl:inline mr-1">Switch Design:</span>
+            <button onclick="switchProto(1)" id="pbtn-1" class="px-2 py-0.5 bg-indigo-600 text-white font-bold rounded shadow text-[10px] transition-all">1: Bento</button>
+            <button onclick="switchProto(2)" id="pbtn-2" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">2: Editorial</button>
+            <button onclick="switchProto(3)" id="pbtn-3" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">3: Glass</button>
+            <button onclick="switchProto(4)" id="pbtn-4" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">4: CLI</button>
+            <button onclick="switchProto(5)" id="pbtn-5" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">5: Apple</button>
+            <button onclick="switchProto(6)" id="pbtn-6" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">6: Synthwave</button>
+            <button onclick="switchProto(7)" id="pbtn-7" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">7: Swiss</button>
+            <button onclick="switchProto(8)" id="pbtn-8" class="px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all">8: 3D Card</button>
         </div>
     </div>
 
@@ -158,7 +180,6 @@
 
     <!-- ================= PROTOTYPE 1 VIEW: Cyber-Glass Neo-Bento ================= -->
     <div id="proto-view-1" class="proto-view active">
-        <!-- Hero Section -->
         <section id="home" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-12 relative z-10">
             <div class="max-w-5xl mx-auto text-center">
                 <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-8 animate-pulse">
@@ -193,43 +214,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Neo-Bento Grid Section -->
-        <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Architecture & Principles</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Neo-Bento <span class="gradient-text">Showcase</span></h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="md:col-span-2 cyber-border p-8 glass-panel flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Back-End System Architecture</h3>
-                        <p class="text-xs text-indigo-300 font-mono mb-4">UniKL Information Technology Student</p>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                            Focused on engineering reliable server endpoints, relational database schemas, and custom Java automated web scrapers.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-800">
-                        <span class="px-2.5 py-1 bg-indigo-950 text-indigo-300 text-xs font-mono rounded">ASP.NET Core</span>
-                        <span class="px-2.5 py-1 bg-purple-950 text-purple-300 text-xs font-mono rounded">Java & Jsoup</span>
-                        <span class="px-2.5 py-1 bg-pink-950 text-pink-300 text-xs font-mono rounded">SQL Server</span>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4">
-                    <h4 class="font-bold text-white text-sm">System Metrics</h4>
-                    <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800">
-                        <div class="text-2xl font-extrabold gradient-text font-mono">3+</div>
-                        <div class="text-[11px] text-gray-400">Deployed Back-End Projects</div>
-                    </div>
-                    <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800">
-                        <div class="text-2xl font-extrabold text-cyan-400 font-mono">100%</div>
-                        <div class="text-[11px] text-gray-400">Automated Java Jsoup Scraping</div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- ================= PROTOTYPE 2 VIEW: Minimalist Editorial Tech ================= -->
@@ -244,11 +228,6 @@
             <p class="text-slate-400 text-lg max-w-2xl mb-8 font-light leading-relaxed">
                 I am <strong class="text-white font-semibold">Muhammad Danisy Hazwan</strong>, an IT student at UniKL specializing in ASP.NET, Java, C#, SQL Server, and automated Jsoup web scraping.
             </p>
-
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl font-mono text-xs text-slate-300 space-y-2 mb-10 shadow-2xl">
-                <p class="text-emerald-400">&gt; cat UniKL_Backend_Summary.json</p>
-                <p>{"developer": "Danisy Hazwan", "focus": "ASP.NET & Java Jsoup Scraping"}</p>
-            </div>
         </section>
     </div>
 
@@ -259,9 +238,6 @@
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4">
                 Building <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">Engineered Systems</span>
             </h1>
-            <p class="text-purple-200 text-lg max-w-2xl mx-auto mb-8 font-light">
-                UniKL IT Student specializing in ASP.NET Core, Java web scrapers, database normalization, and REST APIs.
-            </p>
         </section>
     </div>
 
@@ -269,19 +245,13 @@
     <div id="proto-view-4" class="proto-view">
         <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto font-mono">
             <div class="p-6 bg-black border border-emerald-500/40 rounded-xl text-xs text-emerald-400 shadow-2xl space-y-4">
-                <div class="flex justify-between border-b border-emerald-500/20 pb-2 text-[10px] text-emerald-500/70">
-                    <span>PROTOTYPE 4: RETRO-TERMINAL HACKER CLI</span>
-                    <span>danisy@unikl-pc:~#</span>
-                </div>
                 <p><span class="text-emerald-500 font-bold">danisy@unikl:~$</span> ./load_profile.sh</p>
                 <div class="p-4 bg-emerald-950/40 rounded border border-emerald-500/20 text-emerald-300">
-                    <p class="font-bold text-white">&gt; MUHAMMAD DANISY HAZWAN</p>
-                    <p>&gt; ROLE: IT Student @ UniKL | Back-End Developer</p>
-                    <p>&gt; STACK: ASP.NET Core, Java, C#, SQL Server, Jsoup Web Automation</p>
+                    <p class="font-bold text-white">&gt; MUHAMMAD DANISY HAZWAN (UniKL IT)</p>
+                    <p>&gt; STACK: ASP.NET Core, Java, C#, SQL Server, Jsoup Automation</p>
                 </div>
             </div>
 
-            <!-- Interactive Terminal Prompt Shell -->
             <div class="mt-6 p-6 bg-black border border-emerald-500/40 rounded-xl text-xs font-mono">
                 <h4 class="font-bold text-emerald-400 mb-3">// Type 'help', 'skills', 'projects', or 'contact'</h4>
                 <div id="terminal-output" class="bg-slate-950 p-4 rounded text-emerald-300 space-y-2 h-36 overflow-y-auto mb-3">
@@ -298,17 +268,67 @@
     <!-- ================= PROTOTYPE 5 VIEW: Ultra-Modern 3D Apple ================= -->
     <div id="proto-view-5" class="proto-view">
         <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto text-center">
-            <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/30 text-blue-300 font-semibold text-xs rounded-full mb-6 inline-block">PROTOTYPE 5: ULTRA-MODERN 3D APPLE GLASS</span>
+            <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/30 text-blue-300 font-semibold text-xs rounded-full mb-6 inline-block">PROTOTYPE 5: ULTRA-MODERN 3D APPLE</span>
             <h1 class="text-5xl sm:text-7xl font-extrabold text-white mb-6 tracking-tight">
                 Engineering <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Back-End Systems</span>
             </h1>
-            <p class="text-slate-300 text-lg sm:text-xl font-light max-w-2xl mx-auto mb-8">
-                Specializing in ASP.NET Core, Java web scrapers, database normalization, and REST APIs at Universiti Kuala Lumpur.
+        </section>
+    </div>
+
+    <!-- ================= PROTOTYPE 6 VIEW: Cyberpunk Neon Synthwave ================= -->
+    <div id="proto-view-6" class="proto-view">
+        <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto text-center font-orbitron">
+            <div class="retrowave-sun mb-6"></div>
+            <span class="px-3 py-1 bg-pink-500/20 border border-pink-500/40 text-cyan-300 font-bold text-xs rounded-full mb-6 inline-block shadow-lg shadow-pink-500/30">PROTOTYPE 6: SYNTHWAVE CYBERPUNK 80s</span>
+            <h1 class="text-4xl sm:text-6xl font-black text-white mb-4 tracking-wider synthwave-text">
+                DANISY HAZWAN // DEV
+            </h1>
+            <p class="text-cyan-300 text-sm font-mono tracking-widest uppercase">ASP.NET / JAVA SCRAPING / SQL SERVER / UNIKL IT</p>
+        </section>
+    </div>
+
+    <!-- ================= PROTOTYPE 7 VIEW: Minimalist Swiss Typography ================= -->
+    <div id="proto-view-7" class="proto-view">
+        <section class="pt-32 pb-16 px-4 max-w-5xl mx-auto font-grotesk text-left">
+            <div class="border-b border-white/20 pb-4 mb-8 flex justify-between items-center text-xs font-mono text-gray-400">
+                <span>PROTOTYPE 7 // SWISS INTERNATIONAL STYLE</span>
+                <span>MALAYSIA // UNIKL</span>
+            </div>
+            <h1 class="text-5xl sm:text-8xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+                BACK-END<br>ARCHITECTURE
+            </h1>
+            <p class="text-gray-300 text-lg max-w-xl font-light leading-relaxed">
+                Clean, unadorned system development using ASP.NET, Java, C#, and relational database schemas.
             </p>
         </section>
     </div>
 
-    <!-- ================= SHARED GSAP RADIAL WORK GALLERY (All 5 Prototypes) ================= -->
+    <!-- ================= PROTOTYPE 8 VIEW: Interactive Bento 3D Card Matrix ================= -->
+    <div id="proto-view-8" class="proto-view">
+        <section class="pt-32 pb-16 px-4 max-w-5xl mx-auto text-center">
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-semibold text-xs rounded-full mb-6 inline-block">PROTOTYPE 8: 3D CARD MATRIX BENTO</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-6">
+                Interactive <span class="gradient-text">3D Bento Matrix</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+                <div class="glass-panel p-6 rounded-2xl border border-indigo-500/30 hover:scale-105 transition-transform shadow-2xl">
+                    <div class="text-3xl font-extrabold gradient-text font-mono mb-2">ASP.NET</div>
+                    <p class="text-xs text-gray-300">C# Web Controllers & POS Systems</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-purple-500/30 hover:scale-105 transition-transform shadow-2xl">
+                    <div class="text-3xl font-extrabold text-purple-400 font-mono mb-2">Java Scraper</div>
+                    <p class="text-xs text-gray-300">Jsoup E-Commerce Price Trackers</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-pink-500/30 hover:scale-105 transition-transform shadow-2xl">
+                    <div class="text-3xl font-extrabold text-pink-400 font-mono mb-2">SQL Server</div>
+                    <p class="text-xs text-gray-300">Relational Database Schemas</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= SHARED GSAP RADIAL WORK GALLERY (All 8 Prototypes) ================= -->
     <section id="projects" class="pt-20 pb-16 px-4 relative z-10 overflow-hidden bg-gray-950/60 border-y border-gray-800/80">
         <div class="max-w-6xl mx-auto text-center mb-6">
             <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Interactive Signature Feature</span>
@@ -372,7 +392,7 @@
 
     <!-- Footer & Contact -->
     <section id="contact" class="py-20 px-4 text-center text-xs text-gray-400 border-t border-gray-800">
-        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. All 5 Prototypes Dynamically Switchable in Single Index Page.</p>
+        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. All 8 Prototypes Dynamically Switchable in Single Index Page.</p>
     </section>
 
     <!-- Modal Popup -->
@@ -385,14 +405,17 @@
         </div>
     </div>
 
-    <!-- Dynamic 5-in-1 Switcher Script & GSAP Setup -->
+    <!-- Dynamic 8-in-1 Switcher Script & GSAP Setup -->
     <script>
         const protoNames = {
-            1: "LIVE PROTOTYPE 1: Cyber-Glass Neo-Bento",
-            2: "LIVE PROTOTYPE 2: Minimalist Editorial Tech",
-            3: "LIVE PROTOTYPE 3: Vibrant Gradient Glass",
-            4: "LIVE PROTOTYPE 4: Retro-Terminal Hacker",
-            5: "LIVE PROTOTYPE 5: Ultra-Modern Apple Glass"
+            1: "PROTOTYPE 1: Cyber-Glass Neo-Bento",
+            2: "PROTOTYPE 2: Minimalist Editorial Tech",
+            3: "PROTOTYPE 3: Vibrant Gradient Glass",
+            4: "PROTOTYPE 4: Retro-Terminal Hacker",
+            5: "PROTOTYPE 5: Ultra-Modern Apple Glass",
+            6: "PROTOTYPE 6: Cyberpunk Neon Synthwave",
+            7: "PROTOTYPE 7: Minimalist Swiss Typography",
+            8: "PROTOTYPE 8: 3D Bento Card Matrix"
         };
 
         const protoBg = {
@@ -400,26 +423,28 @@
             2: "#0a0b0e",
             3: "#050515",
             4: "#050811",
-            5: "#02040a"
+            5: "#02040a",
+            6: "#090314",
+            7: "#08080a",
+            8: "#030712"
         };
 
         function switchProto(num) {
-            // Update active view
             document.querySelectorAll('.proto-view').forEach(el => el.classList.remove('active'));
             const target = document.getElementById('proto-view-' + num);
             if (target) target.classList.add('active');
 
-            // Update title & body background
             document.getElementById('current-proto-title').innerText = protoNames[num];
             document.body.style.backgroundColor = protoBg[num];
 
-            // Update button styles
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 8; i++) {
                 const btn = document.getElementById('pbtn-' + i);
-                if (i === num) {
-                    btn.className = "px-2.5 py-1 bg-indigo-600 text-white font-bold rounded shadow transition-all";
-                } else {
-                    btn.className = "px-2.5 py-1 bg-gray-800 text-gray-300 hover:text-white rounded transition-all";
+                if (btn) {
+                    if (i === num) {
+                        btn.className = "px-2 py-0.5 bg-indigo-600 text-white font-bold rounded shadow text-[10px] transition-all";
+                    } else {
+                        btn.className = "px-2 py-0.5 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] transition-all";
+                    }
                 }
             }
 
