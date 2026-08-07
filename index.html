@@ -21,6 +21,10 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -464,6 +468,29 @@
 
             </div>
 
+        </div>
+    </section>
+
+    <!-- Radial Scroll Gallery Section (GSAP) -->
+    <section id="radial-gallery-section" class="py-16 px-4 relative z-10 overflow-hidden bg-gray-950/70 border-y border-gray-800/80">
+        <div class="max-w-6xl mx-auto text-center mb-8">
+            <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Interactive Showcase</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">
+                Radial Work <span class="gradient-text">Gallery</span>
+            </h2>
+            <p class="text-gray-400 text-sm mt-2">Scroll down to rotate through interactive work cards</p>
+            <div class="animate-bounce text-indigo-400 text-xs mt-4 flex items-center justify-center space-x-1">
+                <i class="fa-solid fa-arrow-down text-xs"></i>
+                <span>Scroll to Rotate Wheel</span>
+            </div>
+        </div>
+
+        <div id="radial-pin-wrapper" class="min-h-[600px] w-full relative flex items-center justify-center overflow-hidden">
+            <div id="radial-mask-box" class="relative w-full overflow-hidden h-[550px]" style="mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);">
+                <ul id="radial-wheel" class="absolute left-1/2 -translate-x-1/2 will-change-transform m-0 p-0 list-none transition-opacity duration-500 ease-out">
+                    <!-- Dynamic rotating project items populated via GSAP JS -->
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -915,6 +942,78 @@
         function closeModal() {
             document.getElementById('project-modal').classList.add('hidden');
         }
+
+        // GSAP RadialScrollGallery Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const galleryProjects = [
+                    { id: 1, title: "Cafe POS System", cat: "ASP.NET", img: "assets/images/cafe-dashboard.png", key: "cafe" },
+                    { id: 2, title: "Shopee Price Scraper", cat: "Java Automation", img: "assets/images/shopee-scraper.png", key: "scraper" },
+                    { id: 3, title: "Student Academic Portal", cat: "Web System", img: "assets/images/unikl-portal.png", key: "portal" },
+                    { id: 4, title: "Nebula UI Concept", cat: "Art", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80", key: "cafe" },
+                    { id: 5, title: "Oceanic Analytics", cat: "Nature", img: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&w=400&q=80", key: "scraper" }
+                ];
+
+                const wheel = document.getElementById('radial-wheel');
+                if (wheel) {
+                    const radius = window.innerWidth < 768 ? 240 : 400;
+                    const diameter = radius * 2;
+                    wheel.style.width = diameter + 'px';
+                    wheel.style.height = diameter + 'px';
+                    wheel.style.bottom = (-radius) + 'px';
+
+                    const totalItems = galleryProjects.length;
+                    galleryProjects.forEach((project, index) => {
+                        const li = document.createElement('li');
+                        li.className = 'absolute top-1/2 left-1/2';
+                        
+                        const angle = (index / totalItems) * 2 * Math.PI;
+                        const x = radius * Math.cos(angle);
+                        const y = radius * Math.sin(angle);
+                        const rotationAngle = (angle * 180) / Math.PI;
+
+                        li.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) rotate(${rotationAngle + 90}deg)`;
+
+                        li.innerHTML = `
+                            <div onclick="openModal('${project.key}')" class="radial-card group relative w-[180px] h-[250px] sm:w-[220px] sm:h-[300px] overflow-hidden rounded-xl bg-gray-900 border border-gray-800 shadow-xl cursor-pointer transition-all duration-500 hover:scale-125 hover:-translate-y-6 z-10 hover:z-50">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <img src="${project.img}" alt="${project.title}" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-80"></div>
+                                </div>
+                                <div class="absolute inset-0 flex flex-col justify-between p-4">
+                                    <div class="flex justify-between items-start">
+                                        <span class="px-2 py-0.5 bg-gray-900/80 backdrop-blur text-[10px] font-semibold text-indigo-300 rounded-full border border-indigo-500/30">${project.cat}</span>
+                                        <div class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base sm:text-lg font-bold text-white leading-tight mb-1">${project.title}</h3>
+                                        <div class="h-0.5 bg-indigo-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        wheel.appendChild(li);
+                    });
+
+                    gsap.to('#radial-wheel', {
+                        rotation: 360,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '#radial-pin-wrapper',
+                            pin: true,
+                            start: 'center center',
+                            end: '+=2000',
+                            scrub: 1,
+                            invalidateOnRefresh: true
+                        }
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
