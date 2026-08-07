@@ -106,18 +106,18 @@
 <body class="antialiased selection:bg-indigo-500 selection:text-white relative">
 
     <!-- Persistent Dynamic 5-in-1 Prototype Switcher Bar -->
-    <div class="bg-slate-950/95 border-b border-indigo-500/40 py-2.5 px-4 text-center text-xs font-mono fixed top-0 w-full z-50 backdrop-blur-md flex flex-col sm:flex-row justify-between items-center max-w-full shadow-2xl">
-        <div class="flex items-center space-x-2 mb-1 sm:mb-0">
+    <div class="bg-slate-950/95 border-b border-indigo-500/40 h-11 px-3 sm:px-6 text-xs font-mono fixed top-0 left-0 right-0 z-50 backdrop-blur-md flex justify-between items-center max-w-full shadow-2xl">
+        <div class="flex items-center space-x-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="font-bold text-indigo-300" id="current-proto-title">LIVE PROTOTYPE 1: Cyber-Glass Neo-Bento</span>
+            <span class="font-bold text-indigo-300 text-[11px] sm:text-xs truncate max-w-[200px] sm:max-w-none" id="current-proto-title">PROTOTYPE 1: Cyber-Glass Neo-Bento</span>
         </div>
-        <div class="flex items-center space-x-1.5 flex-wrap justify-center">
-            <span class="text-gray-400 text-[11px] hidden md:inline">Click to Switch Design:</span>
-            <button onclick="switchProto(1)" id="pbtn-1" class="px-2.5 py-1 bg-indigo-600 text-white font-bold rounded shadow transition-all">1: Neo-Bento</button>
-            <button onclick="switchProto(2)" id="pbtn-2" class="px-2.5 py-1 bg-gray-800 text-gray-300 hover:text-white rounded transition-all">2: Editorial</button>
-            <button onclick="switchProto(3)" id="pbtn-3" class="px-2.5 py-1 bg-gray-800 text-gray-300 hover:text-white rounded transition-all">3: Gradient Glass</button>
-            <button onclick="switchProto(4)" id="pbtn-4" class="px-2.5 py-1 bg-gray-800 text-gray-300 hover:text-white rounded transition-all">4: Terminal CLI</button>
-            <button onclick="switchProto(5)" id="pbtn-5" class="px-2.5 py-1 bg-gray-800 text-gray-300 hover:text-white rounded transition-all">5: 3D Apple</button>
+        <div class="flex items-center space-x-1 sm:space-x-1.5 font-mono">
+            <span class="text-gray-400 text-[10px] hidden lg:inline mr-1">Switch Design:</span>
+            <button onclick="switchProto(1)" id="pbtn-1" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-indigo-600 text-white font-bold rounded shadow text-[10px] sm:text-xs transition-all">1: Bento</button>
+            <button onclick="switchProto(2)" id="pbtn-2" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">2: Editorial</button>
+            <button onclick="switchProto(3)" id="pbtn-3" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">3: Glass</button>
+            <button onclick="switchProto(4)" id="pbtn-4" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">4: CLI</button>
+            <button onclick="switchProto(5)" id="pbtn-5" class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-gray-800 text-gray-300 hover:text-white rounded text-[10px] sm:text-xs transition-all">5: Apple</button>
         </div>
     </div>
 
@@ -128,7 +128,7 @@
     </div>
 
     <!-- Navigation Header -->
-    <nav class="fixed top-11 w-full glass-panel z-40 transition-all duration-300 border-b border-gray-800/80">
+    <nav class="fixed top-11 left-0 right-0 w-full glass-panel z-40 transition-all duration-300 border-b border-gray-800/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-14">
                 <a href="#home" class="flex items-center space-x-3 group">
