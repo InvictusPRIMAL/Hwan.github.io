@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Danisy Hazwan - Top 3 Trending Portfolio (Dark & Light Mode)</title>
+    <title>Muhammad Danisy Hazwan - Neo-Bento vs Apple Glass (Dark & Light Mode)</title>
     <meta name="description" content="Portfolio of Muhammad Danisy Hazwan, IT Student at UniKL specializing in Back-End Development, ASP.NET, Java, C#, SQL, and Data Automation.">
     <meta name="author" content="Muhammad Danisy Hazwan">
     
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,6 @@
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
-                        grotesk: ['"Space Grotesk"', 'sans-serif'],
                     }
                 }
             }
@@ -48,11 +47,42 @@
             background-clip: text;
         }
 
-        .light-gradient-text {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+        .apple-gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .cyber-border {
+            position: relative;
+            background: rgba(15, 23, 42, 0.85);
+            border-radius: 1.25rem;
+        }
+        .dark .cyber-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 1.3rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(129, 140, 248, 0.3), rgba(192, 132, 252, 0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .apple-glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+        }
+        .light .apple-glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.12);
         }
 
         .proto-view {
@@ -81,11 +111,16 @@
             pointer-events: auto;
             transform: translateY(0);
         }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-[#060913] dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white relative">
 
-    <!-- Top Bar: Trending Designs + Dark/Light Theme Switcher -->
+    <!-- Top Bar: Design Selector (Neo-Bento vs Apple Glass) + Dark/Light Theme Switcher -->
     <div class="fixed top-0 left-0 right-0 h-11 bg-white/90 dark:bg-slate-950/95 border-b border-slate-200 dark:border-indigo-500/40 z-50 backdrop-blur-md flex justify-between items-center px-3 sm:px-6 shadow-md transition-colors">
         <div class="flex items-center space-x-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
@@ -95,9 +130,14 @@
         <div class="flex items-center space-x-2 font-mono">
             <!-- Prototype Design Switcher -->
             <div class="flex items-center space-x-1">
-                <button onclick="switchProto(1)" id="pbtn-1" class="px-2.5 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all">1: Neo-Bento</button>
-                <button onclick="switchProto(2)" id="pbtn-2" class="px-2.5 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all">2: Editorial</button>
-                <button onclick="switchProto(3)" id="pbtn-3" class="px-2.5 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all">3: Apple Glass</button>
+                <button onclick="switchProto(1)" id="pbtn-1" class="px-3 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all flex items-center space-x-1">
+                    <i class="fa-solid fa-table-cells-large text-[10px]"></i>
+                    <span>1: Neo-Bento</span>
+                </button>
+                <button onclick="switchProto(2)" id="pbtn-2" class="px-3 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all flex items-center space-x-1">
+                    <i class="fa-solid fa-[#000000] fa-apple text-[10px]"></i>
+                    <span>2: Apple Glass</span>
+                </button>
             </div>
 
             <!-- Dark / Light Mode Toggle Button -->
@@ -128,6 +168,7 @@
                 <div class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-600 dark:text-gray-300">
                     <a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
                     <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#code-preview" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Code Architecture</a>
                     <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Radial Gallery</a>
                     <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Journey</a>
                     <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
@@ -143,7 +184,7 @@
         </div>
     </nav>
 
-    <!-- ================= TRENDING DESIGN 1: Neo-Bento Grid & Metrics ================= -->
+    <!-- ================= FULLY DEVELOPED DESIGN 1: Neo-Bento Grid & System Metrics ================= -->
     <div id="proto-view-1" class="proto-view active">
         <!-- Hero Section -->
         <section id="home" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-12 relative z-10">
@@ -173,90 +214,229 @@
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
-                    <a href="https://www.linkedin.com/in/muhammad-hazwan-b29b11300/" target="_blank" class="px-5 py-2.5 bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-blue-300 border border-[#0A66C2]/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">LinkedIn</a>
-                    <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-5 py-2.5 bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-gray-700 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">GitHub</a>
-                    <a href="https://www.instagram.com/itsdanisy/" target="_blank" class="px-5 py-2.5 bg-pink-500/10 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 border border-pink-500/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">Instagram</a>
-                    <button onclick="copyEmail()" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-semibold shadow-lg hover:bg-indigo-500 transition-all">Email Me</button>
+                    <a href="https://www.linkedin.com/in/muhammad-hazwan-b29b11300/" target="_blank" class="px-5 py-2.5 bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-blue-300 border border-[#0A66C2]/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                        <i class="fa-brands fa-linkedin mr-1.5"></i>LinkedIn
+                    </a>
+                    <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-5 py-2.5 bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-gray-700 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                        <i class="fa-brands fa-github mr-1.5"></i>GitHub
+                    </a>
+                    <a href="https://www.instagram.com/itsdanisy/" target="_blank" class="px-5 py-2.5 bg-pink-500/10 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 border border-pink-500/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                        <i class="fa-brands fa-instagram mr-1.5"></i>Instagram
+                    </a>
+                    <button onclick="copyEmail()" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-semibold shadow-lg hover:bg-indigo-500 transition-all">
+                        <i class="fa-regular fa-envelope mr-1.5"></i>Email Me
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Neo-Bento Grid Section -->
+        <!-- Neo-Bento Grid Showcase -->
         <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
             <div class="text-center mb-12">
                 <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-cyan-400 uppercase">Architecture & Principles</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Neo-Bento <span class="gradient-text">Showcase</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- 5-Card Neo-Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Card 1: Core Bio -->
                 <div class="md:col-span-2 p-8 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Back-End System Architecture</h3>
-                        <p class="text-xs text-indigo-600 dark:text-indigo-300 font-mono mb-4">UniKL Information Technology Student</p>
-                        <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-                            Focused on engineering reliable server endpoints, relational database schemas, and custom Java automated web scrapers using Jsoup.
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600/10 dark:bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Back-End System Architecture</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-mono">UniKL Information Technology Student</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                            Focused on engineering reliable server endpoints, relational database schemas, and custom Java automated web scrapers leveraging Jsoup for real-time data ingestion.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200 dark:border-gray-800">
                         <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-mono rounded-lg">ASP.NET Core</span>
                         <span class="px-3 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-xs font-mono rounded-lg">Java & Jsoup</span>
                         <span class="px-3 py-1 bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 text-xs font-mono rounded-lg">SQL Server</span>
+                        <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-mono rounded-lg">REST APIs</span>
                     </div>
                 </div>
 
-                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl space-y-4">
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Key System Metrics</h4>
-                    <div class="p-3 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
-                        <div class="text-2xl font-extrabold text-indigo-600 dark:text-cyan-400 font-mono">3+</div>
-                        <div class="text-[11px] text-slate-500 dark:text-gray-400">Deployed Back-End Projects</div>
+                <!-- Card 2: Metrics -->
+                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-line text-purple-500"></i>
+                        <span>System Metrics</span>
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
+                            <div class="text-3xl font-extrabold text-indigo-600 dark:text-cyan-400 font-mono">3+</div>
+                            <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Deployed Back-End Systems</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
+                            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">100%</div>
+                            <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Automated Java Web Scraping</div>
+                        </div>
                     </div>
-                    <div class="p-3 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
-                        <div class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">100%</div>
-                        <div class="text-[11px] text-slate-500 dark:text-gray-400">Automated Java Jsoup Scraping</div>
+                </div>
+            </div>
+
+            <!-- Key Values Cards (Clean Architecture, Data Automation, Continuous Growth) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fa-solid fa-code"></i>
                     </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Clean Architecture</h4>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Writing structured, maintainable C# & Java code focused on reliability and object-oriented principles.</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-purple-600/10 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Data Automation</h4>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Automating price tracking & scraping workflows with Java Jsoup DOM parsing tools.</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-pink-600/10 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Continuous Growth</h4>
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Active UniKL IT student committed to constant technical learning and system design mastery.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neo-Bento Code Preview Windows -->
+        <section id="code-preview" class="py-20 px-4 max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-widest text-purple-600 dark:text-purple-400 uppercase font-mono">Live Engineering Code</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Back-End <span class="gradient-text">Code Architecture</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Code Window 1: Java Scraper -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                            <span class="text-xs font-mono text-slate-300 ml-2">ShopeePriceMonitor.java</span>
+                        </div>
+                        <span class="px-2 py-0.5 bg-amber-950 text-amber-300 text-[10px] font-mono rounded">Java + Jsoup</span>
+                    </div>
+                    <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code><span class="text-purple-400">public class</span> <span class="text-yellow-300">ShopeePriceMonitor</span> {
+    <span class="text-purple-400">public void</span> <span class="text-blue-400">fetchPrice</span>(String url) {
+        Document doc = Jsoup.connect(url)
+            .userAgent(<span class="text-emerald-300">"Mozilla/5.0"</span>)
+            .timeout(5000).get();
+
+        String priceStr = doc.select(<span class="text-emerald-300">".pqTWkA"</span>).text();
+        <span class="text-purple-400">double</span> price = Double.parseDouble(priceStr);
+        
+        <span class="text-purple-400">if</span> (price &lt; targetThreshold) {
+            sendTelegramAlert(<span class="text-emerald-300">"Price drop: RM"</span> + price);
+        }
+    }
+}</code></pre>
+                </div>
+
+                <!-- Code Window 2: ASP.NET C# -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                            <span class="text-xs font-mono text-slate-300 ml-2">CafeOrderController.cs</span>
+                        </div>
+                        <span class="px-2 py-0.5 bg-indigo-950 text-indigo-300 text-[10px] font-mono rounded">ASP.NET C#</span>
+                    </div>
+                    <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code>[<span class="text-blue-400">HttpPost</span>(<span class="text-emerald-300">"api/orders/create"</span>)]
+<span class="text-purple-400">public async</span> Task&lt;IActionResult&gt; <span class="text-yellow-300">CreateOrder</span>([FromBody] OrderReq req) {
+    <span class="text-purple-400">var</span> order = <span class="text-purple-400">new</span> Order {
+        TableNumber = req.TableNum,
+        Status = OrderStatus.Preparing,
+        CreatedAt = DateTime.UtcNow
+    };
+    <span class="text-purple-400">await</span> _db.Orders.AddAsync(order);
+    <span class="text-purple-400">await</span> _db.SaveChangesAsync();
+    <span class="text-purple-400">return</span> Ok(<span class="text-purple-400">new</span> { OrderId = order.Id });
+}</code></pre>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- ================= TRENDING DESIGN 2: Minimalist Editorial Tech ================= -->
+    <!-- ================= FULLY DEVELOPED DESIGN 2: Ultra-Modern Apple Glass ================= -->
     <div id="proto-view-2" class="proto-view">
-        <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto font-grotesk">
-            <div class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono text-xs rounded mb-6">
-                DESIGN 2: MINIMALIST EDITORIAL TECH (SWISS STYLE)
+        <!-- Hero Section -->
+        <section class="pt-36 pb-20 px-4 max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full apple-glass-card text-blue-600 dark:text-blue-300 text-xs font-semibold mb-8">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                <span>IT Student @ UniKL &bull; Back-End Developer</span>
             </div>
-            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                Designing server architecture & data scrapers with precision.
-            </h1>
-            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mb-8 font-light leading-relaxed">
-                I am <strong class="text-slate-900 dark:text-white font-semibold">Muhammad Danisy Hazwan</strong>, an IT student at UniKL specializing in ASP.NET, Java, C#, SQL Server, and automated Jsoup web scraping.
-            </p>
 
-            <div class="p-6 bg-slate-900 text-emerald-400 border border-slate-800 rounded-xl font-mono text-xs space-y-2 mb-10 shadow-2xl">
-                <div class="flex justify-between pb-2 border-b border-slate-800 text-[10px] text-slate-500">
-                    <span>danisy@unikl-terminal:~#</span>
-                    <span>JSON_VERSION=1.0</span>
-                </div>
-                <p>&gt; cat UniKL_Backend_Summary.json</p>
-                <p className="text-slate-300">{"developer": "Muhammad Danisy Hazwan", "focus": "ASP.NET & Java Jsoup Scraping"}</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- ================= TRENDING DESIGN 3: Ultra-Modern Apple Glass ================= -->
-    <div id="proto-view-3" class="proto-view">
-        <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto text-center">
-            <span class="px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 text-blue-600 dark:text-blue-300 font-semibold text-xs rounded-full mb-6 inline-block">DESIGN 3: ULTRA-MODERN APPLE GLASS</span>
-            <h1 class="text-5xl sm:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">
-                Engineering <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Back-End Systems</span>
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                Engineering <span class="apple-gradient-text">Back-End Systems</span>
             </h1>
-            <p class="text-slate-600 dark:text-slate-300 text-lg sm:text-xl font-light max-w-2xl mx-auto mb-8">
+
+            <p class="text-slate-600 dark:text-slate-300 text-lg sm:text-2xl font-light mb-10 max-w-3xl mx-auto leading-relaxed">
                 Specializing in ASP.NET Core, Java web scrapers, database normalization, and REST APIs at Universiti Kuala Lumpur.
             </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <a href="#projects" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full shadow-xl shadow-blue-600/30 transition-all text-sm">
+                    Explore Radial Gallery
+                </a>
+                <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-8 py-4 apple-glass-card text-slate-800 dark:text-slate-200 font-semibold rounded-full hover:scale-105 transition-all text-sm">
+                    GitHub Repository
+                </a>
+            </div>
+        </section>
+
+        <!-- Apple Glass Tech Capabilities Section -->
+        <section class="py-16 px-4 max-w-5xl mx-auto">
+            <div class="apple-glass-card p-8 sm:p-12 rounded-3xl">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 uppercase">TECHNOLOGY STACK</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Core Capabilities</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mx-auto mb-4">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">ASP.NET &amp; C#</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">POS Order Systems &amp; Web Controllers</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mx-auto mb-4">
+                            <i class="fa-solid fa-spider"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Java &amp; Jsoup</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Automated Price Monitoring</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
+                        <div class="w-12 h-12 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl mx-auto mb-4">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">SQL Server</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Relational Schemas &amp; Queries</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
-    <!-- ================= SHARED GSAP RADIAL WORK GALLERY (Dark & Light Mode Supported) ================= -->
+    <!-- ================= SHARED GSAP RADIAL WORK GALLERY (Dark & Light Mode) ================= -->
     <section id="projects" class="pt-20 pb-16 px-4 relative z-10 overflow-hidden bg-slate-100 dark:bg-slate-950/80 border-y border-slate-200 dark:border-gray-800/80 transition-colors">
         <div class="max-w-6xl mx-auto text-center mb-6">
             <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Interactive Signature Feature</span>
@@ -279,7 +459,7 @@
         </div>
     </section>
 
-    <!-- Shared Timeline & Journey -->
+    <!-- Shared Academic & Experience Journey -->
     <section id="experience" class="py-24 scroll-mt-20 px-4 sm:px-6 lg:px-8 relative z-10 min-h-[75vh] flex flex-col justify-center">
         <div class="max-w-4xl mx-auto w-full">
             <div class="text-center mb-16">
@@ -320,7 +500,7 @@
 
     <!-- Footer & Contact -->
     <section id="contact" class="py-20 px-4 text-center text-xs text-slate-500 dark:text-gray-400 border-t border-slate-200 dark:border-gray-800">
-        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. Top 3 Trending Designs with Dark & Light Mode Toggle.</p>
+        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. Neo-Bento vs Apple Glass (Dark & Light Mode).</p>
     </section>
 
     <!-- Modal Popup -->
@@ -337,8 +517,7 @@
     <script>
         const protoNames = {
             1: "1: Neo-Bento Grid",
-            2: "2: Editorial Tech",
-            3: "3: Apple Glass"
+            2: "2: Apple Glass"
         };
 
         function switchProto(num) {
@@ -348,13 +527,13 @@
 
             document.getElementById('current-proto-title').innerText = protoNames[num];
 
-            for (let i = 1; i <= 3; i++) {
+            for (let i = 1; i <= 2; i++) {
                 const btn = document.getElementById('pbtn-' + i);
                 if (btn) {
                     if (i === num) {
-                        btn.className = "px-2.5 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all";
+                        btn.className = "px-3 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all flex items-center space-x-1";
                     } else {
-                        btn.className = "px-2.5 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all";
+                        btn.className = "px-3 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all flex items-center space-x-1";
                     }
                 }
             }
@@ -364,7 +543,6 @@
             }
         }
 
-        // Theme Toggle Logic (Dark / Light Mode)
         function toggleTheme() {
             const html = document.documentElement;
             const isDark = html.classList.contains('dark');
@@ -381,7 +559,6 @@
             }
         }
 
-        // Init Saved Theme Preference
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.classList.remove('dark');
             document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun text-amber-500"></i>';
