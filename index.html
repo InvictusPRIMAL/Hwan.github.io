@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Danisy Hazwan - Neo-Bento vs Apple Glass (Dark & Light Mode)</title>
+    <title>Muhammad Danisy Hazwan - IT Student & Back-End Developer Portfolio</title>
     <meta name="description" content="Portfolio of Muhammad Danisy Hazwan, IT Student at UniKL specializing in Back-End Development, ASP.NET, Java, C#, SQL, and Data Automation.">
     <meta name="author" content="Muhammad Danisy Hazwan">
     
@@ -47,13 +47,6 @@
             background-clip: text;
         }
 
-        .apple-gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .cyber-border {
             position: relative;
             background: rgba(15, 23, 42, 0.85);
@@ -70,29 +63,6 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
-        }
-
-        .apple-glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
-        }
-        .light .apple-glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.12);
-        }
-
-        .proto-view {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .proto-view.active {
-            display: block;
-            opacity: 1;
         }
 
         /* Toast notification */
@@ -120,51 +90,25 @@
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-[#060913] dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white relative">
 
-    <!-- Top Bar: Design Selector (Neo-Bento vs Apple Glass) + Dark/Light Theme Switcher -->
-    <div class="fixed top-0 left-0 right-0 h-11 bg-white/90 dark:bg-slate-950/95 border-b border-slate-200 dark:border-indigo-500/40 z-50 backdrop-blur-md flex justify-between items-center px-3 sm:px-6 shadow-md transition-colors">
-        <div class="flex items-center space-x-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="font-bold text-indigo-600 dark:text-indigo-300 text-xs font-mono truncate max-w-[160px] sm:max-w-none" id="current-proto-title">1: Neo-Bento Grid</span>
-        </div>
-        
-        <div class="flex items-center space-x-2 font-mono">
-            <!-- Prototype Design Switcher -->
-            <div class="flex items-center space-x-1">
-                <button onclick="switchProto(1)" id="pbtn-1" class="px-3 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all flex items-center space-x-1">
-                    <i class="fa-solid fa-table-cells-large text-[10px]"></i>
-                    <span>1: Neo-Bento</span>
-                </button>
-                <button onclick="switchProto(2)" id="pbtn-2" class="px-3 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all flex items-center space-x-1">
-                    <i class="fa-solid fa-[#000000] fa-apple text-[10px]"></i>
-                    <span>2: Apple Glass</span>
-                </button>
-            </div>
-
-            <!-- Dark / Light Mode Toggle Button -->
-            <button onclick="toggleTheme()" id="theme-toggle-btn" class="ml-2 px-2.5 py-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-amber-300 border border-slate-300 dark:border-slate-700 rounded text-xs font-semibold flex items-center space-x-1 hover:scale-105 transition-transform">
-                <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
-                <span id="theme-text" class="hidden sm:inline">Dark</span>
-            </button>
-        </div>
-    </div>
-
     <!-- Toast Notification -->
     <div id="toast" class="toast bg-white dark:bg-slate-900 px-5 py-3.5 rounded-xl flex items-center space-x-3 shadow-2xl border border-slate-200 dark:border-indigo-500/40">
         <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
         <span id="toast-message" class="text-sm font-medium text-slate-800 dark:text-gray-200">Email copied to clipboard!</span>
     </div>
 
-    <!-- Shared Navigation Header -->
-    <nav class="fixed top-11 left-0 right-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-40 border-b border-slate-200 dark:border-gray-800/80 transition-colors">
+    <!-- Fixed Header Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 w-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md z-50 border-b border-slate-200 dark:border-gray-800/80 transition-colors shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-14">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand Logo -->
                 <a href="#home" class="flex items-center space-x-3 group">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-500 flex items-center justify-center text-white font-bold font-mono text-xs shadow-md">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-500 flex items-center justify-center text-white font-bold font-mono text-sm shadow-md group-hover:scale-105 transition-transform">
                         DH
                     </div>
-                    <span class="text-base font-bold dark:gradient-text text-indigo-600 tracking-wide">Danisy Hazwan</span>
+                    <span class="text-lg font-bold dark:gradient-text text-indigo-600 tracking-wide">Danisy Hazwan</span>
                 </a>
 
+                <!-- Desktop Navigation Links -->
                 <div class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-600 dark:text-gray-300">
                     <a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
                     <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
@@ -174,162 +118,169 @@
                     <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
                 </div>
 
+                <!-- Right Action Buttons: Copy Email + Theme Toggle -->
                 <div class="flex items-center space-x-3">
                     <button onclick="copyEmail()" class="px-3.5 py-1.5 text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-gray-700 rounded-lg transition-colors flex items-center space-x-1.5">
                         <i class="fa-regular fa-copy"></i>
                         <span>Copy Email</span>
+                    </button>
+
+                    <!-- Dark / Light Mode Toggle Button -->
+                    <button onclick="toggleTheme()" id="theme-toggle-btn" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-amber-300 border border-slate-300 dark:border-slate-700 rounded-lg text-xs font-semibold flex items-center space-x-1.5 hover:scale-105 transition-transform">
+                        <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
+                        <span id="theme-text" class="hidden sm:inline">Dark</span>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- ================= FULLY DEVELOPED DESIGN 1: Neo-Bento Grid & System Metrics ================= -->
-    <div id="proto-view-1" class="proto-view active">
-        <!-- Hero Section -->
-        <section id="home" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-12 relative z-10">
-            <div class="max-w-5xl mx-auto text-center">
-                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs font-semibold mb-8 animate-pulse">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                    <span>Open for Tech Internships & Back-End Collaboration</span>
-                </div>
-
-                <div class="mb-8 relative inline-block group">
-                    <div class="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-75 blur-md"></div>
-                    <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl bg-slate-200 dark:bg-gray-900 mx-auto">
-                        <img src="assets/images/avatar.png" alt="Danisy Hazwan Avatar" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
-                    Hi, I'm <span class="gradient-text">Danisy Hazwan</span>
-                </h1>
-
-                <p class="text-xl sm:text-2xl text-slate-600 dark:text-gray-300 font-medium mb-6 tracking-wide max-w-3xl mx-auto">
-                    UniKL Information Technology Student & <span class="text-indigo-600 dark:text-cyan-400 font-semibold">Back-End Developer</span>
-                </p>
-
-                <p class="text-base text-slate-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Engineering ASP.NET Core, Java web scrapers, database architectures, and automated Jsoup web data monitors.
-                </p>
-
-                <div class="flex flex-wrap justify-center gap-3 mb-8">
-                    <a href="https://www.linkedin.com/in/muhammad-hazwan-b29b11300/" target="_blank" class="px-5 py-2.5 bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-blue-300 border border-[#0A66C2]/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
-                        <i class="fa-brands fa-linkedin mr-1.5"></i>LinkedIn
-                    </a>
-                    <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-5 py-2.5 bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-gray-700 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
-                        <i class="fa-brands fa-github mr-1.5"></i>GitHub
-                    </a>
-                    <a href="https://www.instagram.com/itsdanisy/" target="_blank" class="px-5 py-2.5 bg-pink-500/10 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 border border-pink-500/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
-                        <i class="fa-brands fa-instagram mr-1.5"></i>Instagram
-                    </a>
-                    <button onclick="copyEmail()" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-semibold shadow-lg hover:bg-indigo-500 transition-all">
-                        <i class="fa-regular fa-envelope mr-1.5"></i>Email Me
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Neo-Bento Grid Showcase -->
-        <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-cyan-400 uppercase">Architecture & Principles</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Neo-Bento <span class="gradient-text">Showcase</span></h2>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs font-semibold mb-8 animate-pulse">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                <span>Open for Tech Internships & Back-End Collaboration</span>
             </div>
 
-            <!-- 5-Card Neo-Bento Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <!-- Card 1: Core Bio -->
-                <div class="md:col-span-2 p-8 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-600/10 dark:bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Back-End System Architecture</h3>
-                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-mono">UniKL Information Technology Student</p>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-6 font-light">
-                            Focused on engineering reliable server endpoints, relational database schemas, and custom Java automated web scrapers leveraging Jsoup for real-time data ingestion.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200 dark:border-gray-800">
-                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-mono rounded-lg">ASP.NET Core</span>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-xs font-mono rounded-lg">Java & Jsoup</span>
-                        <span class="px-3 py-1 bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 text-xs font-mono rounded-lg">SQL Server</span>
-                        <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-mono rounded-lg">REST APIs</span>
-                    </div>
+            <div class="mb-8 relative inline-block group">
+                <div class="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-75 blur-md"></div>
+                <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl bg-slate-200 dark:bg-gray-900 mx-auto">
+                    <img src="assets/images/avatar.png" alt="Danisy Hazwan Avatar" class="w-full h-full object-cover">
                 </div>
+            </div>
 
-                <!-- Card 2: Metrics -->
-                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center space-x-2">
-                        <i class="fa-solid fa-chart-line text-purple-500"></i>
-                        <span>System Metrics</span>
-                    </h4>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
-                            <div class="text-3xl font-extrabold text-indigo-600 dark:text-cyan-400 font-mono">3+</div>
-                            <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Deployed Back-End Systems</div>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+                Hi, I'm <span class="gradient-text">Danisy Hazwan</span>
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-slate-600 dark:text-gray-300 font-medium mb-6 tracking-wide max-w-3xl mx-auto">
+                UniKL Information Technology Student & <span class="text-indigo-600 dark:text-cyan-400 font-semibold">Back-End Developer</span>
+            </p>
+
+            <p class="text-base text-slate-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Engineering ASP.NET Core, Java web scrapers, database architectures, and automated Jsoup web data monitors.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <a href="https://www.linkedin.com/in/muhammad-hazwan-b29b11300/" target="_blank" class="px-5 py-2.5 bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-blue-300 border border-[#0A66C2]/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                    <i class="fa-brands fa-linkedin mr-1.5"></i>LinkedIn
+                </a>
+                <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-5 py-2.5 bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-gray-700 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                    <i class="fa-brands fa-github mr-1.5"></i>GitHub
+                </a>
+                <a href="https://www.instagram.com/itsdanisy/" target="_blank" class="px-5 py-2.5 bg-pink-500/10 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 border border-pink-500/30 rounded-xl text-xs font-semibold hover:scale-105 transition-transform">
+                    <i class="fa-brands fa-instagram mr-1.5"></i>Instagram
+                </a>
+                <button onclick="copyEmail()" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-semibold shadow-lg hover:bg-indigo-500 transition-all">
+                    <i class="fa-regular fa-envelope mr-1.5"></i>Email Me
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neo-Bento Grid Showcase Section -->
+    <section id="about" class="py-24 scroll-mt-28 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-cyan-400 uppercase">Architecture & Principles</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Neo-Bento <span class="gradient-text">Showcase</span></h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full mt-3"></div>
+        </div>
+
+        <!-- 5-Card Neo-Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Card 1: Core Bio -->
+            <div class="md:col-span-2 p-8 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600/10 dark:bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-user-graduate"></i>
                         </div>
-                        <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
-                            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">100%</div>
-                            <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Automated Java Web Scraping</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Back-End System Architecture</h3>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-300 font-mono">UniKL Information Technology Student</p>
                         </div>
                     </div>
+                    <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                        Focused on engineering reliable server endpoints, relational database schemas, and custom Java automated web scrapers leveraging Jsoup for real-time data ingestion.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200 dark:border-gray-800">
+                    <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-xs font-mono rounded-lg">ASP.NET Core</span>
+                    <span class="px-3 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-xs font-mono rounded-lg">Java & Jsoup</span>
+                    <span class="px-3 py-1 bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 text-xs font-mono rounded-lg">SQL Server</span>
+                    <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-mono rounded-lg">REST APIs</span>
                 </div>
             </div>
 
-            <!-- Key Values Cards (Clean Architecture, Data Automation, Continuous Growth) -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center text-lg mb-3">
-                        <i class="fa-solid fa-code"></i>
+            <!-- Card 2: Metrics -->
+            <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center space-x-2">
+                    <i class="fa-solid fa-chart-line text-purple-500"></i>
+                    <span>System Metrics</span>
+                </h4>
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
+                        <div class="text-3xl font-extrabold text-indigo-600 dark:text-cyan-400 font-mono">3+</div>
+                        <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Deployed Back-End Systems</div>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Clean Architecture</h4>
-                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Writing structured, maintainable C# & Java code focused on reliability and object-oriented principles.</p>
-                </div>
-
-                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 bg-purple-600/10 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center text-lg mb-3">
-                        <i class="fa-solid fa-robot"></i>
+                    <div class="p-4 bg-slate-50 dark:bg-gray-900/80 rounded-xl border border-slate-200 dark:border-gray-800">
+                        <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">100%</div>
+                        <div class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Automated Java Web Scraping</div>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Data Automation</h4>
-                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Automating price tracking & scraping workflows with Java Jsoup DOM parsing tools.</p>
-                </div>
-
-                <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 bg-pink-600/10 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center text-lg mb-3">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Continuous Growth</h4>
-                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Active UniKL IT student committed to constant technical learning and system design mastery.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Neo-Bento Code Preview Windows -->
-        <section id="code-preview" class="py-20 px-4 max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-purple-600 dark:text-purple-400 uppercase font-mono">Live Engineering Code</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Back-End <span class="gradient-text">Code Architecture</span></h2>
+        <!-- Key Values Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                <div class="w-10 h-10 bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Clean Architecture</h4>
+                <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Writing structured, maintainable C# & Java code focused on reliability and object-oriented principles.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Code Window 1: Java Scraper -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                            <span class="text-xs font-mono text-slate-300 ml-2">ShopeePriceMonitor.java</span>
-                        </div>
-                        <span class="px-2 py-0.5 bg-amber-950 text-amber-300 text-[10px] font-mono rounded">Java + Jsoup</span>
+            <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                <div class="w-10 h-10 bg-purple-600/10 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Data Automation</h4>
+                <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Automating price tracking & scraping workflows with Java Jsoup DOM parsing tools.</p>
+            </div>
+
+            <div class="p-6 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-gray-800 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform">
+                <div class="w-10 h-10 bg-pink-600/10 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center text-lg mb-3">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Continuous Growth</h4>
+                <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed">Active UniKL IT student committed to constant technical learning and system design mastery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Preview Windows -->
+    <section id="code-preview" class="py-24 scroll-mt-28 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold tracking-widest text-purple-600 dark:text-purple-400 uppercase font-mono">Live Engineering Code</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Back-End <span class="gradient-text">Code Architecture</span></h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-3"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Code Window 1: Java Scraper -->
+            <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                        <span class="text-xs font-mono text-slate-300 ml-2">ShopeePriceMonitor.java</span>
                     </div>
-                    <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code><span class="text-purple-400">public class</span> <span class="text-yellow-300">ShopeePriceMonitor</span> {
+                    <span class="px-2 py-0.5 bg-amber-950 text-amber-300 text-[10px] font-mono rounded">Java + Jsoup</span>
+                </div>
+                <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code><span class="text-purple-400">public class</span> <span class="text-yellow-300">ShopeePriceMonitor</span> {
     <span class="text-purple-400">public void</span> <span class="text-blue-400">fetchPrice</span>(String url) {
         Document doc = Jsoup.connect(url)
             .userAgent(<span class="text-emerald-300">"Mozilla/5.0"</span>)
@@ -343,20 +294,20 @@
         }
     }
 }</code></pre>
-                </div>
+            </div>
 
-                <!-- Code Window 2: ASP.NET C# -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                            <span class="text-xs font-mono text-slate-300 ml-2">CafeOrderController.cs</span>
-                        </div>
-                        <span class="px-2 py-0.5 bg-indigo-950 text-indigo-300 text-[10px] font-mono rounded">ASP.NET C#</span>
+            <!-- Code Window 2: ASP.NET C# -->
+            <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                        <span class="text-xs font-mono text-slate-300 ml-2">CafeOrderController.cs</span>
                     </div>
-                    <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code>[<span class="text-blue-400">HttpPost</span>(<span class="text-emerald-300">"api/orders/create"</span>)]
+                    <span class="px-2 py-0.5 bg-indigo-950 text-indigo-300 text-[10px] font-mono rounded">ASP.NET C#</span>
+                </div>
+                <pre class="p-5 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-slate-950/90"><code>[<span class="text-blue-400">HttpPost</span>(<span class="text-emerald-300">"api/orders/create"</span>)]
 <span class="text-purple-400">public async</span> Task&lt;IActionResult&gt; <span class="text-yellow-300">CreateOrder</span>([FromBody] OrderReq req) {
     <span class="text-purple-400">var</span> order = <span class="text-purple-400">new</span> Order {
         TableNumber = req.TableNum,
@@ -367,77 +318,12 @@
     <span class="text-purple-400">await</span> _db.SaveChangesAsync();
     <span class="text-purple-400">return</span> Ok(<span class="text-purple-400">new</span> { OrderId = order.Id });
 }</code></pre>
-                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- ================= FULLY DEVELOPED DESIGN 2: Ultra-Modern Apple Glass ================= -->
-    <div id="proto-view-2" class="proto-view">
-        <!-- Hero Section -->
-        <section class="pt-36 pb-20 px-4 max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full apple-glass-card text-blue-600 dark:text-blue-300 text-xs font-semibold mb-8">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                <span>IT Student @ UniKL &bull; Back-End Developer</span>
-            </div>
-
-            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                Engineering <span class="apple-gradient-text">Back-End Systems</span>
-            </h1>
-
-            <p class="text-slate-600 dark:text-slate-300 text-lg sm:text-2xl font-light mb-10 max-w-3xl mx-auto leading-relaxed">
-                Specializing in ASP.NET Core, Java web scrapers, database normalization, and REST APIs at Universiti Kuala Lumpur.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <a href="#projects" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full shadow-xl shadow-blue-600/30 transition-all text-sm">
-                    Explore Radial Gallery
-                </a>
-                <a href="https://github.com/InvictusPRIMAL" target="_blank" class="px-8 py-4 apple-glass-card text-slate-800 dark:text-slate-200 font-semibold rounded-full hover:scale-105 transition-all text-sm">
-                    GitHub Repository
-                </a>
-            </div>
-        </section>
-
-        <!-- Apple Glass Tech Capabilities Section -->
-        <section class="py-16 px-4 max-w-5xl mx-auto">
-            <div class="apple-glass-card p-8 sm:p-12 rounded-3xl">
-                <div class="text-center mb-10">
-                    <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 uppercase">TECHNOLOGY STACK</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Core Capabilities</h2>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mx-auto mb-4">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">ASP.NET &amp; C#</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">POS Order Systems &amp; Web Controllers</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
-                        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mx-auto mb-4">
-                            <i class="fa-solid fa-spider"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Java &amp; Jsoup</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Automated Price Monitoring</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center">
-                        <div class="w-12 h-12 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl mx-auto mb-4">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">SQL Server</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Relational Schemas &amp; Queries</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ================= SHARED GSAP RADIAL WORK GALLERY (Dark & Light Mode) ================= -->
-    <section id="projects" class="pt-20 pb-16 px-4 relative z-10 overflow-hidden bg-slate-100 dark:bg-slate-950/80 border-y border-slate-200 dark:border-gray-800/80 transition-colors">
+    <!-- GSAP RADIAL WORK GALLERY -->
+    <section id="projects" class="pt-24 pb-16 scroll-mt-28 px-4 relative z-10 overflow-hidden bg-slate-100 dark:bg-slate-950/80 border-y border-slate-200 dark:border-gray-800/80 transition-colors">
         <div class="max-w-6xl mx-auto text-center mb-6">
             <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Interactive Signature Feature</span>
             <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
@@ -460,7 +346,7 @@
     </section>
 
     <!-- Shared Academic & Experience Journey -->
-    <section id="experience" class="py-24 scroll-mt-20 px-4 sm:px-6 lg:px-8 relative z-10 min-h-[75vh] flex flex-col justify-center">
+    <section id="experience" class="py-24 scroll-mt-28 px-4 sm:px-6 lg:px-8 relative z-10 min-h-[75vh] flex flex-col justify-center">
         <div class="max-w-4xl mx-auto w-full">
             <div class="text-center mb-16">
                 <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Education & History</span>
@@ -500,7 +386,7 @@
 
     <!-- Footer & Contact -->
     <section id="contact" class="py-20 px-4 text-center text-xs text-slate-500 dark:text-gray-400 border-t border-slate-200 dark:border-gray-800">
-        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. Neo-Bento vs Apple Glass (Dark & Light Mode).</p>
+        <p class="mb-2">© 2026 Muhammad Danisy Hazwan. Neo-Bento Portfolio (Dark & Light Mode).</p>
     </section>
 
     <!-- Modal Popup -->
@@ -515,34 +401,6 @@
 
     <!-- Scripts -->
     <script>
-        const protoNames = {
-            1: "1: Neo-Bento Grid",
-            2: "2: Apple Glass"
-        };
-
-        function switchProto(num) {
-            document.querySelectorAll('.proto-view').forEach(el => el.classList.remove('active'));
-            const target = document.getElementById('proto-view-' + num);
-            if (target) target.classList.add('active');
-
-            document.getElementById('current-proto-title').innerText = protoNames[num];
-
-            for (let i = 1; i <= 2; i++) {
-                const btn = document.getElementById('pbtn-' + i);
-                if (btn) {
-                    if (i === num) {
-                        btn.className = "px-3 py-1 bg-indigo-600 text-white font-bold rounded shadow text-xs transition-all flex items-center space-x-1";
-                    } else {
-                        btn.className = "px-3 py-1 bg-slate-200 dark:bg-gray-800 text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white rounded text-xs transition-all flex items-center space-x-1";
-                    }
-                }
-            }
-
-            if (typeof ScrollTrigger !== 'undefined') {
-                setTimeout(() => ScrollTrigger.refresh(), 100);
-            }
-        }
-
         function toggleTheme() {
             const html = document.documentElement;
             const isDark = html.classList.contains('dark');
